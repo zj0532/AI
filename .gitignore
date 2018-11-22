@@ -1,0 +1,7 @@
+.idea
+composer.lock
+*.log
+thinkphp
+runtime
+/.svn
+/application/database.php

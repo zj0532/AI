@@ -1,0 +1,47 @@
+{include file="public/header" /}
+{include file="public/head" /}
+<link type="text/css" href="/static/www/css/news/news.css" rel="stylesheet">
+<div class="container-fluid" style="padding: 0px">
+    <div class="row" style="margin: 0px">
+        <!--标题-->
+        <div class="col-md-12 news-title text-center">
+            <span>|</span>
+            <span>新闻</span>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            {volist name="list" id="vo"}
+            <div class="col-md-4 news-content">
+                <div class="news-border">
+                    <!--新闻图片-->
+                    <div class="col-md-12">
+                        <a href="/newsInfo/{$vo.ns_id}"><img src="{$img_path}{$vo.ns_img}"></a>
+                    </div>
+                    <!--新闻标题-->
+                    <div class="col-md-12 news-content-title">
+                        <a href="/newsInfo/{$vo.ns_id}"><span>{$vo.ns_title}</span></a>
+                    </div>
+                    <!--新闻内容-->
+                    <div class="col-md-12 news-content-descript">
+                        <a href="/newsInfo/{$vo.ns_id}"><span>{$vo.ns_descript}</span></a>
+                    </div>
+                    <!--下划线-->
+                    <div class="col-md-12 news_underline"></div>
+                    <!--点击次数-->
+                    <div class="col-md-12 click-num">
+                        <i class="iconfont icon-click_num"></i>
+                        <span>{$vo.ns_clicks} comments</span>
+                    </div>
+                </div>
+            </div>
+            {/volist}
+            <!--分页-->
+            <div class="col-md-12 text-center">
+                {$list->render()}
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-12 news-foot-height"></div>
+    </div>
+</div>
+{include file="public/foot" /}

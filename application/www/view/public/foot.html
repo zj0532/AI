@@ -1,0 +1,82 @@
+<link type="text/css" href="/static/www/css/foot.css" rel="stylesheet">
+
+<div class="container-fluid padding-0">
+    <div class="row margin-0" style="background:rgba(89,97,106,1);">
+        <div class="customer-notice">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <!--客户须知-->
+                <div class="col-md-3">
+                    <ul>
+                        <li>客户须知</li>
+                        <li><a href="/public_sale_rules">众售规则</a></li>
+                        <li><a href="/risk_hints">风险提示</a></li>
+                        <li><a href="/disclaimer">免责声明</a></li>
+                    </ul>
+                </div>
+                <!--挖矿及隐私保护-->
+                <div class="col-md-3">
+                    <ul>
+                        <li class="privacy">挖矿及隐私保护</li>
+                        <li><a href="/intelligent_contract_for_mining">挖矿智能合约</a></li>
+                        <li><a href="/payment_mechanism">付费机制</a></li>
+                    </ul>
+                </div>
+                <!--FX平台-->
+                <div class="col-md-3">
+                    <ul>
+                        <li>FX平台</li>
+                        <li><a href="/intelligent_contract">NEO智能合约</a></li>
+                        <li><a href="/framework">FX架构</a></li>
+                    </ul>
+                </div>
+                <!--联系我们-->
+                <div class="col-md-3 foot-bottom-margin">
+                    <ul>
+                        <li>联系我们</li>
+                        <li><i class="iconfont icon-address"></i> 地址 ：3666 street address, Newyork, NY, 33333 USA</li>
+                        <li><i class="iconfont icon-tel"></i> 电话 ：+(333) 052 33333</li>
+                        <li><i class="iconfont icon-email"></i> 邮箱 ：btb@FOREXCOIN.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</div>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/static/admin/js/bootstrap.min.js"></script>
+    <script>
+      $(function(){
+          // alert($(window).width());
+          $('#contact_us').click(function(){
+              var lx_name,lx_email,lx_phone,lx_title,lx_content
+              $('#contact_us').attr({"disabled":"disabled"});
+              lx_name = $('#lx_name').val();
+              lx_email = $('#lx_email').val();
+              lx_phone = $('#lx_phone').val();
+              lx_title = $('#lx_title').val();
+              lx_content = $('#lx_content').val();
+              $.ajax({
+                  type:'post',
+                  url:'/contact_us',
+                  data:{
+                      lx_name:lx_name,
+                      lx_email:lx_email,
+                      lx_phone:lx_phone,
+                      lx_title:lx_title,
+                      lx_content:lx_content,
+                  },
+                  success:function(data){
+                      if(data.status == 200){
+                          alert(data.message)
+                      }else {
+                          alert(data.message)
+                      }
+                  }
+              })
+          })
+      })
+    </script>
+  </body>
+</html>

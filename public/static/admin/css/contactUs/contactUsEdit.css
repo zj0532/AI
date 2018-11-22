@@ -1,0 +1,16 @@
+label{
+    margin: 20px 0 0 0;
+    line-height: 34px;
+}
+.form-group div input{
+    margin-top: 20px;
+}
+.form-group div textarea{
+    margin-top: 20px;
+}
+
+.form-group button{
+    margin-top: 20px;
+    width: 150px;
+    border-radius: 5%;
+}

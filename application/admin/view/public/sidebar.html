@@ -1,0 +1,64 @@
+<aside>
+  <div id="sidebar" class="nav-collapse ">
+    <ul class="sidebar-menu">
+{if condition="$Think.session.admin_leixing eq 1"}
+      {eq name="sidebar" value="1"}
+      <li class="active">
+      {else/}
+      <li>
+      {/eq}
+        <a class="" href="/admcncp/">
+          <i class="icon-user"></i>
+            <span>管理员</span>
+          </a>
+      </li>
+{/if}
+      {eq name="sidebar" value="2"}
+      <li class="active">
+      {else/}
+      <li>
+      {/eq}
+        <a class="" href="/admcncp/news">
+          <i class="icon-align-left"></i>
+            <span>新闻资讯</span>
+          </a>
+      </li>
+
+        {eq name="sidebar" value="3"}
+        <li class="active">
+            {else/}
+        <li>
+            {/eq}
+            <a class="" href="/admcncp/contactUs/">
+                <i class="icon-comments"></i>
+                <span>联系我们</span>
+            </a>
+        </li>
+
+        {eq name="sidebar" value="4"}
+        <li class="active">
+            {else/}
+        <li>
+            {/eq}
+            <a class="" href="/navigation">
+                <i class="icon-comments"></i>
+                <span>底部导航</span>
+            </a>
+        </li>
+      <!--{eq name="sidebar" value="5"}-->
+      <!--<li class="active">-->
+      <!--{else/}-->
+      <!--<li>-->
+      <!--{/eq}-->
+        <!--<a class="" href="/admcncp/lxwm/1">   -->
+          <!--<i class="icon-comments"></i>-->
+            <!--<span>联系我们</span>-->
+          <!--</a>-->
+      <!--</li>-->
+
+
+
+
+    </ul>
+  </div>
+</aside>
